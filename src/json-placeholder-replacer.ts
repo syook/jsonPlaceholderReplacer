@@ -1,3 +1,5 @@
+import get from 'lodash.get'
+
 const defaultDelimiterTags = [
     {
         begin: '{{',
@@ -80,7 +82,7 @@ export class JsonPlaceholderReplacer {
                 placeHolder.length - (delimiterTag.begin.length + delimiterTag.end.length));
             const mapCheckResult = this.checkInEveryMap(path);
             if (mapCheckResult === undefined) {
-                return placeHolder;
+                return "";
             }
             if (!placeHolderIsInsideStringContext) {
                 return mapCheckResult;
@@ -103,14 +105,14 @@ export class JsonPlaceholderReplacer {
         if (map === undefined) {
             return;
         }
-        const shortCircuit = map[path];
+        const shortCircuit = get(map, path);
         if (shortCircuit !== undefined) {
             return JSON.stringify(shortCircuit);
         }
         let keys = path.split('.');
         const key: string = keys[0];
         keys.shift();
-        return this.navigateThroughMap(map[key], keys.join('.'));
+        return this.navigateThroughMap(get(map, key), keys.join('.'));
     }
 
 }

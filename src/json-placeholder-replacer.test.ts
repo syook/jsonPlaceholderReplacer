@@ -200,7 +200,7 @@ describe('JsonPlaceholderReplacer', () => {
             replaceable: '<<key.not.found>>'
         });
 
-        expect(afterReplace.replaceable).toBe('<<key.not.found>>');
+        expect(afterReplace.replaceable).toBe('');
     });
 
     it('should prefer short circuit', () => {
@@ -241,7 +241,7 @@ describe('JsonPlaceholderReplacer', () => {
             replaceable: '{{key}}'
         });
 
-        expect(afterReplace.replaceable).toBe('{{key}}');
+        expect(afterReplace.replaceable).toBe('');
     });
 
     it('should replace full object placeHolder', () => {
@@ -313,7 +313,7 @@ describe('JsonPlaceholderReplacer', () => {
             key: '<<value>>'
         });
 
-        expect(afterReplace.key).toBe('<<value>>');
+        expect(afterReplace.key).toBe('');
     });
 
     it('should not replace key placeHolder', () => {

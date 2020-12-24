@@ -1,6 +1,6 @@
 {
-  "name": "json-placeholder-replacer",
-  "version": "1.0.35",
+  "name": "@syook/json-placeholder-replacer",
+  "version": "1.0.37",
   "description": "Javascript/Typescript library/cli to replace placeholders in an javascript object",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/virgs/jsonPlaceholderReplacer.git"
+    "url": "git+https://github.com/syook/jsonPlaceholderReplacer.git"
   },
   "keywords": [
     "json",
@@ -29,11 +29,12 @@
   "author": "Virgs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/virgs/jsonPlaceholderReplacer/issues"
+    "url": "https://github.com/syook/jsonPlaceholderReplacer/issues"
   },
-  "homepage": "https://github.com/virgs/jsonPlaceholderReplacer#readme",
+  "homepage": "https://github.com/syook/jsonPlaceholderReplacer#readme",
   "devDependencies": {
     "@types/jest": "^25.2.3",
+    "@types/lodash.get": "^4.4.6",
     "@types/node": "^14.0.9",
     "jest": "^24.9.0",
     "ts-jest": "^26.1.0",
@@ -68,5 +69,8 @@
       "jsx",
       "json"
     ]
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
   }
 }
